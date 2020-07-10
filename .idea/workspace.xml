@@ -35,7 +35,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RCAN_TrainCode/code/model" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -81,13 +81,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="459" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1594383261709" />
-    <state x="372" y="0" key="CommitChangelistDialog2" timestamp="1594383204133">
+    <state x="372" y="0" key="CommitChangelistDialog2" timestamp="1594383325746">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594383204133" />
+    <state x="372" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594383325746" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1587185712861">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587185712861" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1594383332098">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594383332098" />
   </component>
 </project>
