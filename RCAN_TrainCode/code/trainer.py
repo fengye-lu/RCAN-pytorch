@@ -32,7 +32,7 @@ class Trainer():
     def train(self):
         self.scheduler.step()
         self.loss.step()
-        epoch = self.scheduler.last_epoch + 1
+        epoch = self.scheduler.last_epoch
         lr = self.scheduler.get_lr()[0]
 
         self.ckp.write_log(
@@ -74,7 +74,7 @@ class Trainer():
         self.error_last = self.loss.log[-1, -1]
 
     def test(self):
-        epoch = self.scheduler.last_epoch + 1
+        epoch = self.scheduler.last_epoch
         self.ckp.write_log('\nEvaluation:')
         self.ckp.add_log(torch.zeros(1, len(self.scale)))
         self.model.eval()
@@ -138,6 +138,6 @@ class Trainer():
             self.test()
             return True
         else:
-            epoch = self.scheduler.last_epoch + 1
+            epoch = self.scheduler.last_epoch
             return epoch >= self.args.epochs
 
