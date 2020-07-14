@@ -191,10 +191,12 @@ class RCAN(nn.Module):
         modules_body.append(conv(n_feats, n_feats, kernel_size))
 
         # define tail module
-        modules_tail = [
+        modules_up = [
             common.Upsampler(conv, scale, n_feats, act=False),
-            CRB(conv, n_feats, kernel_size, reduction),
             ]
+        modules_tail = [
+            CRB(conv, n_feats, kernel_size, reduction),
+        ]
         modules_re = [conv(n_feats, args.n_colors, kernel_size)]
 
         self.add_mean = common.MeanShift(args.rgb_range, rgb_mean, rgb_std, 1)
@@ -202,6 +204,7 @@ class RCAN(nn.Module):
         self.head = nn.Sequential(*modules_head)
         self.prebody = nn.Sequential(*modules_prebody)
         self.body = nn.Sequential(*modules_body)
+        self.up = nn.Sequential(*modules_up)
         self.tail = nn.Sequential(*modules_tail)
         self.re = nn.Sequential(*modules_re)
 
@@ -212,6 +215,9 @@ class RCAN(nn.Module):
         res1 = self.prebody(x)
         res = self.body(res1)
         res += x
+        res = self.up(res)
+
+        res1 = self.up(res1)
 
         x = self.tail(res+res1)
         x = self.re(x+res)
